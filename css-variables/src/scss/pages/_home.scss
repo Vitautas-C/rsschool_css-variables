@@ -1,0 +1,262 @@
+@font-face {
+    font-family: "Lato";
+    src: url(/fonts/Lato/Lato-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100vh;
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    margin: 0 auto;
+    background-color: var(--color-base, #35477c);
+    color: var(--color-text, #FFF);
+}
+
+ :root {
+    --color-text: #FFF;
+    --color-base: #35477c;
+    --angle: 0deg;
+    --circle: 0%;
+    --spacing: 50%;
+    --blur: 0px;
+}
+
+
+/* Simple photo editor styles start */
+
+.photo__editor {
+    height: 90vh;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.photo-editor__wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.photo-editor__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.photo-editor__title {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.photo-editor__subtitle {
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+
+.photo-editor__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(var(--angle, 0deg));
+}
+
+.photo-editor__button-clear {
+    width: 300px;
+    height: 30px;
+    background: #f69d3c;
+    margin-bottom: 15px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 21px;
+    line-height: 30px;
+    text-align: center;
+    color: #F2F2F2;
+    border-radius: 5px;
+}
+
+.photo-editor__button-clear:hover,
+.photo-editor__button-clear:focus,
+.photo-editor__button-clear:active {
+    cursor: pointer;
+    box-shadow: 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+
+.photo-editor__card-pic {
+    width: var(--spacing, 50%);
+    border-radius: var(--circle, 0%);
+    // filter: blur(var(--blur, 0px)) brightness(var(--brightness, 100%)) contrast(var(--contrast, 100%)) grayscale(var(--grayscale, 0%)) hue-rotate(var(--hue-rotate, 0deg)) invert(var(--invert, 0%)) opacity(var(--opacity, 100%)) saturate(var(--saturate, 100%)) sepia(var(--sepia, 0%));
+    transition: all 1s;
+}
+
+.photo-editor__controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-editor__control {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.photo-editor__controls input {
+    width: 150px;
+}
+
+.photo-editor__control label {
+    padding-right: 50px;
+}
+
+
+/* Simple photo editor styles end */
+
+
+/* Modal styles start*/
+
+.modal {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.modal::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.modal__content {
+    width: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px 15px;
+    background: #3f87a6;
+    box-shadow: 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.modal__button-close {
+    font-size: 26px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.modal__button-close:hover,
+.modal__button-close:focus,
+.modal__button-close:active {
+    cursor: pointer;
+    box-shadow: 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+
+.modal__title {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    color: #F0D8D9;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    margin-bottom: 16px;
+}
+
+.modal__button {
+    /* position: relative;
+left: 50%;
+transform: translate(-50%, 0); */
+    width: 120px;
+    height: 38px;
+    background: #f69d3c;
+    margin-top: 15px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 26px;
+    line-height: 38px;
+    text-align: center;
+    color: #F2F2F2;
+    border: 0;
+    border-radius: 5px;
+}
+
+.modal__button:hover,
+.modal__button:focus,
+.modal__button:active {
+    cursor: pointer;
+    box-shadow: 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+
+.modal__field {
+    width: 240px;
+    height: 38px;
+    padding-left: 14px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border: 0;
+}
+
+input::placeholder {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+
+/* Modal styles end*/
+
+@media screen and (max-width: 768px) {
+    .photo-editor__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    .photo-editor__card {
+        padding-bottom: 20px;
+    }
+    .photo-editor__controls {
+        margin: 0 auto;
+    }
+    .photo-editor__control {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+    }
+}
