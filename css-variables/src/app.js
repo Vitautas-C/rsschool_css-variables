@@ -48,7 +48,9 @@ const inputs = document.querySelectorAll(".photo-editor__controls input");
 function handleUpdate() {
     const suffix = this.dataset.sizing || '';
     document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+    let elem = document.querySelector(`output[for="${this.name}"]`);
+    elem.innerText = this.value;
 }
 
-inputs.forEach(input => input.addEventListener('oninput', handleUpdate));
+inputs.forEach(input => input.addEventListener('change', handleUpdate));
 inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
