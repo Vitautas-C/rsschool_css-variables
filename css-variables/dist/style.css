@@ -261,7 +261,7 @@ body {
 }
 
 :root {
-    --color-text: #FFF;
+    --color-text: #ffffff;
     --color-base: #35477c;
     --angle: 0deg;
     --circle: 0%;
@@ -312,10 +312,10 @@ body {
 }
 
 .photo-editor__button-clear {
-    width: 300px;
     height: 30px;
     background: #f69d3c;
     margin-bottom: 15px;
+    padding: 0 10px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
     font-size: 21px;
     line-height: 30px;
@@ -335,7 +335,7 @@ body {
     width: var(--spacing, 50%);
     border-radius: var(--circle, 0%);
     filter: blur(var(--blur, 0px)) brightness(var(--brightness, 100%)) contrast(var(--contrast, 100%)) grayscale(var(--grayscale, 0%)) hue-rotate(var(--hue-rotate, 0deg)) invert(var(--invert, 0%)) opacity(var(--opacity, 100%)) saturate(var(--saturate, 100%)) sepia(var(--sepia, 0%));
-    transition: all 1s;
+    transition: all 1s
 }
 
 .photo-editor__controls {
@@ -350,11 +350,17 @@ body {
 }
 
 .photo-editor__controls input {
-    width: 150px
+    width: 120px
 }
 
 .photo-editor__control label {
-    padding-right: 50px
+    width: 100px;
+    padding-right: 20px
+}
+
+.photo-editor__control output {
+    width: 80px;
+    padding-left: 20px
 }
 
 .modal {
@@ -386,7 +392,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px 30px 15px;
-    background: #3f87a6;
+    background: var(--color-base, #35477c);
     box-shadow: 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     z-index: 2
@@ -416,13 +422,13 @@ body {
 }
 
 .modal__button {
-    width: 120px;
-    height: 38px;
+    height: 30px;
     background: #f69d3c;
     margin-top: 15px;
+    padding: 0 10px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-    font-size: 26px;
-    line-height: 38px;
+    font-size: 21px;
+    line-height: 30px;
     text-align: center;
     color: #F2F2F2;
     border: 0;
@@ -460,10 +466,8 @@ input::placeholder {
 
 @media screen and (max-width: 768px) {
     .photo-editor__wrapper {
-        display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        padding: 10px
+        justify-content: space-evenly
     }
     .photo-editor__card {
         padding-bottom: 20px
@@ -474,6 +478,10 @@ input::placeholder {
     .photo-editor__control {
         display: flex;
         justify-content: space-between;
-        padding-bottom: 10px
+        padding-bottom: 10px;
+        font-size: 13px
+    }
+    .photo-editor__control label {
+        width: 80px
     }
 }
