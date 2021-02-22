@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study projects</title>
+    <link rel="stylesheet" href="dist/style.css">
+
+</head>
+
+<body class="projects">
+    <main class="main">
+        <!-- Simple photo editor start -->
+        <section class="photo__editor">
+            <div class="photo-editor__text">
+                <h2 class="photo-editor__title">Simple photo editor</h2>
+                <p class="photo-editor__subtitle">
+                    Try this simple photo editor, it's fun.
+                </p>
+            </div>
+            <div class="photo-editor__wrapper">
+
+                <div class="photo-editor__card">
+                    <div class="photo-editor__button-clear">Choose your picture</div>
+                    <img src="img\demo-version.jpg" alt="Photo" class="photo-editor__card-pic">
+                </div>
+
+                <div class="photo-editor__controls">
+                    <div class="photo-editor__control">
+                        <label for="color-text">Text Color</label>
+                        <input id="color-text" type="color" name="color-text" value="#ffffff">
+                        <output for="color-text">#ffffff</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="color-base">Base Color</label>
+                        <input id="color-base" type="color" name="color-base" value="#35477c">
+                        <output for="color-base">#35477c</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="spacing">Size:</label>
+                        <input id="spacing" type="range" name="spacing" min="20" max="90" value="50" data-sizing="%">
+                        <output for="spacing">50</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="angle">Rotation:</label>
+                        <input id="angle" type="range" name="angle" min="-90" max="90" value="0" data-sizing="deg">
+                        <output for="angle">0</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="circle">Rounded:</label>
+                        <input id="circle" type="range" name="circle" min="0" max="50" value="0" data-sizing="%">
+                        <output for="circle">0</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="blur">Blur:</label>
+                        <input id="blur" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+                        <output for="blur">0</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="brightness">Brightness:</label>
+                        <input id="brightness" type="range" name="brightness" min="0" max="200" value="100" data-sizing="%">
+                        <output for="brightness">100</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="contrast">Contrast:</label>
+                        <input id="contrast" type="range" name="contrast" min="0" max="200" value="100" data-sizing="%">
+                        <output for="contrast">100</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="hue-rotate">Hue:</label>
+                        <input id="hue-rotate" type="range" name="hue-rotate" min="0" max="360" value="0" data-sizing="deg">
+                        <output for="hue-rotate">0</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="saturate">Saturation:</label>
+                        <input id="saturate" type="range" name="saturate" min="0" max="200" value="100" data-sizing="%">
+                        <output for="saturate">100</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="opacity">Opacity:</label>
+                        <input id="opacity" type="range" name="opacity" min="0" max="100" value="100" data-sizing="%">
+                        <output for="opacity">100</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="sepia">Sepia:</label>
+                        <input id="sepia" type="range" name="sepia" min="0" max="100" value="0" data-sizing="%">
+                        <output for="sepia">0</output>
+                    </div>
+                    <div class="photo-editor__control">
+                        <label for="grayscale">Grayscale:</label>
+                        <input id="grayscale" type="range" name="grayscale" min="0" max="100" value="0" data-sizing="%">
+                        <output for="grayscale">0</output>
+                    </div>
+
+                    <div class="photo-editor__control">
+                        <label for="invert">Inversion:</label>
+                        <input id="invert" type="range" name="invert" min="0" max="100" value="0" data-sizing="%">
+                        <output for="invert">0</output>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Simple photo editor end -->
+
+        <!-- Modal photo editor start -->
+        <section class="modal">
+            <div class="modal__content">
+                <span class="far fa-window-close modal__button-close"></span>
+                <h3 class="modal__title">Please enter URL address of your photo.</h3>
+                <input type="text" id="user-picture" class="modal__field" name="user-picture" placeholder="i.e. https://">
+                <div class="modal__button">Apply</div>
+            </div>
+        </section>
+        <!-- Modal photo editor end -->
+
+    </main>
+
+    <script type="text/javascript" src="dist/bundle.js"></script>
+    <script src="https://kit.fontawesome.com/e8eebc1614.js " crossorigin="anonymous "></script>
+</body>
+
+</html>
